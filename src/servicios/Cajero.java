@@ -6,10 +6,15 @@ import modelos.Pedido;
 public class Cajero {
     private String nombre;
 
+    public Cajero(String nombre) {
+        this.nombre = nombre;
+    }
+
     public Pedido recibirPedido() { return new Pedido(); }
 
-    public Pedido registrarPedido() {
+    public Pedido registrarPedido(Cliente cliente) {
         Pedido nuevoPedido = new Pedido();
+        nuevoPedido.setCliente(cliente);
         nuevoPedido.setEstado("Registrado en Caja");
         return nuevoPedido;
     }

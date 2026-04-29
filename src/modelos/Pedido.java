@@ -6,10 +6,19 @@ import java.util.List;
 public class Pedido {
     private final List<Producto> productos;
     private String estado;
+    private Cliente cliente;
 
     public Pedido() {
         this.productos = new ArrayList<>();
         this.estado = "Creado";
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public void agregarProducto(Producto producto) { this.productos.add(producto); }
